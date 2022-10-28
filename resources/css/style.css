@@ -1,0 +1,289 @@
+/* VARIABLES */
+
+:root {
+
+    /* colors */
+    
+    --clr-base: hsl(247, 24%, 7%);
+    --clr-base-lt: hsl(247, 24%, 60%);
+    --clr-base-dk: hsl(247, 24%, 2%);
+
+    --clr-primary: hsl(32, 100%, 50%);
+    --clr-primary-lt: hsl(32, 100%, 60%);
+    --clr-primary-ltr: hsl(32, 100%, 75%);
+    --clr-primary-dk: hsl(32, 100%, 40%);
+    --clr-primary-dkr: hsl(32, 100%, 25%);
+
+    --clr-secondary: hsl(7, 86%, 62%);
+    --clr-secondary-lt: hsl(7, 86%, 72%);
+    --clr-secondary-ltr: hsl(7, 86%, 85%);
+    --clr-secondary-dk: hsl(7, 86%, 52%);
+    --clr-secondary-dkr: hsl(7, 86%, 35%);
+
+    --clr-tertiary: hsl(339, 78%, 55%);
+
+    --clr-ntrl: #a7a9be;
+    --clr-ntrl-lt: #fffffe;
+    --clr-ntrl-dk: black;
+
+    /* font families */
+
+    --ff-h: "Mulish", sans-serif;
+    --ff-p: "Space Mono", monospace;
+
+    /* font sizing */
+
+    --fs-base: 1rem;
+    
+    --fs-s: 0.75rem;
+    --fs-l: 1.25rem;
+
+    --fs-h1: clamp(2.8rem, 10vw, 10rem);
+    --fs-h1-s: clamp(2.5rem, 9vw, 9rem);
+    --fs-h2: clamp(2rem, 5vw, 5rem);
+    --fs-h3: clamp(1.8rem, 3vw, 4rem);
+    --fs-h4: clamp(1.5rem, 2vw, 3rem);
+
+    /* font weight */
+  
+    --fw-p: 400;
+    --fw-h1: 900;
+    --fw-h2: 700;
+    --fw-h3: 500;
+    --fw-h4: 500;
+
+
+    /* layout */
+
+    --max-content-width: min(80vw, 150rem);
+    --section-padding-block: min(18vh, 100rem);
+    
+    --spacer-s: 1rem;
+    --spacer-m: calc(var(--spacer-s)*2);
+    --spacer-l: calc(var(--spacer-s)*3);
+
+    --header-height: 3rem;
+
+    /* styling */
+
+    --shadow: 0.1rem 0.1rem 0.5rem var(--clr-ntrl-dk);
+    --border-clr: var(--clr-ntrl-lt);
+    --border-weight: 0.1rem;
+    --border-radius: 0.3rem;
+}
+
+
+/* BASE STYLING */
+
+h1, h2, h3, h4 {
+    font-family: var(--ff-h);
+    color: var(--clr-ntrl-lt);
+}
+
+h1, h2, h3 {
+    text-shadow: var(--shadow);
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-h4);
+}
+
+p, a, li {
+    font-family: var(--ff-p);
+    color: var(--clr-ntrl);
+    font-size: var(--fs-base);
+    font-weight: var(--fw-p);
+}
+
+body {
+    background-color: var(--clr-base);
+}
+
+section {
+    padding-block: var(--section-padding-block);
+}
+
+header {
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    
+}
+
+main {
+    position: relative;
+    top: var(--header-height);
+    z-index: 1;
+}
+
+/* FONT CLASSES */
+
+.fc-p {
+    color: var(--clr-ntrl);
+}
+
+.fc-h {
+    color: var(--clr-base-lt);
+}
+
+.fc-primary {
+    color: var(--clr-primary);
+}
+
+.fc-secondary {
+    color: var(--clr-secondary);
+}
+
+.fc-tertiary {
+    color: var(--clr-tertiary);
+}
+
+.ff-p {
+    font-family: var(--ff-p);
+}
+
+.ff-h {
+    font-family: var(--ff-h);
+}
+
+.em-italic {
+    font-style: italic;
+}
+
+.fs-base {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-p);
+}
+
+
+/* OTHER STYLING CLASSES */
+
+.bgc-base {
+    background-color: var(--clr-base);
+}
+
+.bgc-lt {
+    background-color: var(--clr-base-lt);
+}
+
+.bgc-dk {
+    background-color: var(--clr-base-dk);
+}
+
+.fs-shadow {
+    text-shadow: var(--shadow);
+}
+
+.bg-shadow {
+    box-shadow: var(--shadow);
+}
+
+.contain-width {
+    max-width: var(--max-content-width);
+}
+
+.button {
+    font-family: var(--ff-p);
+    background-color: var(--clr-primary);
+    color: var(--clr-ntrl-lt);
+    padding: calc(var(--spacer-s)/2);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    
+}
+
+.together {
+    white-space: nowrap;
+}
+
+
+/* HEADER */
+
+
+/* MAIN */
+
+div.main.container {
+    width: var(--max-content-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "banner"
+                         "about" 
+                         "skills"
+                         "projects"
+                         "contact";
+}
+
+
+/* BANNER */
+
+section#banner {
+    grid-area: banner;
+}
+
+#banner h1 {
+    line-height: 1.2;
+}
+
+#banner .hi {
+    position: relative;
+    left: 0.1rem;
+}
+    
+
+#banner .i {
+    font-size: var(--fs-h1-s);
+    font-weight: var(--fw-h2);
+}
+
+#banner .button {
+    margin: 2rem auto 0 auto;
+    width: 9rem;
+}
+
+
+/* ABOUT */
+
+section#about {
+    grid-area: about;
+}
+
+/* SKILLS */
+
+section#skills {
+    grid-area: skills;
+}
+
+/* PROJECTS */
+
+section#projects {
+    grid-area: projects;
+}
+
+/* CONTACT */
+
+section#contact {
+    grid-area: contact;
+}
+
+
+

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
+/* Remove default margin and padding */
 body,
 h1,
 h2,
@@ -40,8 +40,7 @@ html:focus-within {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.2;
+  line-height: 1.5;
 }
 
 

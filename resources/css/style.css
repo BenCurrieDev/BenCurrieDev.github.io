@@ -4,61 +4,62 @@
 
     /* colors */
     
-    --clr-base: hsl(247, 24%, 7%);
+    --clr-base: #0e0d17;
     --clr-base-lt: hsl(247, 24%, 60%);
     --clr-base-dk: hsl(247, 24%, 2%);
 
-    --clr-primary: hsl(32, 100%, 50%);
+    --clr-primary: #ff8800;
     --clr-primary-lt: hsl(32, 100%, 60%);
     --clr-primary-ltr: hsl(32, 100%, 75%);
     --clr-primary-dk: hsl(32, 100%, 40%);
     --clr-primary-dkr: hsl(32, 100%, 25%);
 
-    --clr-secondary: hsl(7, 86%, 62%);
+    --clr-secondary: #f15e4b;
     --clr-secondary-lt: hsl(7, 86%, 72%);
     --clr-secondary-ltr: hsl(7, 86%, 85%);
     --clr-secondary-dk: hsl(7, 86%, 52%);
     --clr-secondary-dkr: hsl(7, 86%, 35%);
 
-    --clr-tertiary: hsl(339, 78%, 55%);
+    --clr-tertiary: #e63371;
 
     --clr-ntrl: #a7a9be;
-    --clr-ntrl-lt: #fffffe;
+    --clr-ntrl-lt: hsl(235, 15%, 92%);
     --clr-ntrl-dk: black;
 
     /* font families */
 
-    --ff-h: "Mulish", sans-serif;
-    --ff-p: "Space Mono", monospace;
+    --ff-h: "Poppins", sans-serif;
+    --ff-p: "DM Sans", sans-serif;
 
     /* font sizing */
 
-    --fs-base: 1rem;
+    --fs-base: clamp(0.7rem, 1.5vw, 1.2rem);
     
-    --fs-s: 0.75rem;
-    --fs-l: 1.25rem;
+    --fs-s: calc(var(--fs-base) * 0.8);
+    --fs-l: calc(var(--fs-base) * 1.2);
 
-    --fs-h1: clamp(2.8rem, 10vw, 10rem);
-    --fs-h1-s: clamp(2.5rem, 9vw, 9rem);
-    --fs-h2: clamp(2rem, 5vw, 5rem);
-    --fs-h3: clamp(1.8rem, 3vw, 4rem);
-    --fs-h4: clamp(1.5rem, 2vw, 3rem);
+    --fs-h1: clamp(1.8rem, 5.6vw, 6.9rem);
+    --fs-h2: clamp(1.7rem, 3vw, 5rem);
+    --fs-h3: clamp(1.8rem, 2vw, 4rem);
+    --fs-h4:  clamp(0.7rem, 1.2vw, 1.6rem);
+    --fs-button: clamp(0.6rem, 1vw, 1.4rem);
 
     /* font weight */
   
     --fw-p: 400;
-    --fw-h1: 900;
+    --fw-h1: 700;
     --fw-h2: 700;
-    --fw-h3: 500;
-    --fw-h4: 500;
+    --fw-h3: 600;
+    --fw-h4: 400;
+    --fw-thin: 200;
 
 
     /* layout */
 
-    --max-content-width: min(80vw, 150rem);
-    --section-padding-block: min(18vh, 100rem);
+    --max-content-width: min(82vw, 100rem);
+    --section-padding-block: min(20vh, 40rem);
     
-    --spacer-s: 1rem;
+    --spacer-s: clamp(0.5rem, 3vw, 5rem);
     --spacer-m: calc(var(--spacer-s)*2);
     --spacer-l: calc(var(--spacer-s)*3);
 
@@ -68,8 +69,10 @@
 
     --shadow: 0.1rem 0.1rem 0.5rem var(--clr-ntrl-dk);
     --border-clr: var(--clr-ntrl-lt);
-    --border-weight: 0.1rem;
-    --border-radius: 0.3rem;
+    --border-weight: 0.07rem;
+    --border-radius: 0.2rem;
+
+    --button-h: 3em;
 }
 
 
@@ -158,10 +161,12 @@ main {
 
 .ff-p {
     font-family: var(--ff-p);
+    font-weight: var(--fw-p);
 }
 
 .ff-h {
     font-family: var(--ff-h);
+    font-weight: var(--fw-h3);
 }
 
 .em-italic {
@@ -171,6 +176,38 @@ main {
 .fs-base {
     font-size: var(--fs-base);
     font-weight: var(--fw-p);
+}
+
+.fs-h1 {
+    font-size: var(--fs-h1);
+}
+
+.fs-h2 {
+    font-size: var(--fs-h2);
+}
+
+.fs-h3 {
+    font-size: var(--fs-h3);
+}
+
+.fs-h4 {
+    font-size: var(--fs-h4);
+}
+
+.fw-h1 {
+    font-weight: var(--fw-h1);
+}
+
+.fw-h2 {
+    font-weight: var(--fw-h2);
+}
+
+.fw-h3 {
+    font-weight: var(--fw-h3);
+}
+
+.fw-h4 {
+    font-weight: var(--fw-h4);
 }
 
 
@@ -201,14 +238,17 @@ main {
 }
 
 .button {
-    font-family: var(--ff-p);
-    background-color: var(--clr-primary);
-    color: var(--clr-ntrl-lt);
-    padding: calc(var(--spacer-s)/2);
+    font-family: var(--ff-h);
+    font-weight: var(--fw-thin);
+    color: var(--clr-primary);
+    border: var(--border-weight) solid var(--clr-primary);
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: var(--shadow);
-    
+    font-size: var(--fs-button);
+    display: block;
+    height: var(--button-h);
+    line-height: calc(var(--button-h) - (var(--border-weight)*2));
 }
 
 .together {
@@ -238,28 +278,37 @@ div.main.container {
 
 section#banner {
     grid-area: banner;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    min-height: calc(100vh - var(--header-height));
 }
 
 #banner h1 {
-    line-height: 1.2;
+    font-size: var(--fs-base);
 }
 
 #banner .hi {
+    font-weight: var(--fw-p);
     position: relative;
-    left: 0.1rem;
+    left: calc(var(--fs-h1)*0.03);
+    bottom: calc(var(--fs-h1)*0.1);
 }
-    
 
-#banner .i {
-    font-size: var(--fs-h1-s);
-    font-weight: var(--fw-h2);
+nav.banner.desktop {
+    margin-top: calc(var(--fs-h1)*0.6);
+}
+
+#banner .desktop ul {
+    display: flex;
+    margin-left: calc(var(--fs-h1)*0.05);
 }
 
 #banner .button {
-    margin: 2rem auto 0 auto;
-    width: 9rem;
+    width: 10em;
+    margin-right: calc(var(--button-h)/2);
 }
-
 
 /* ABOUT */
 

@@ -297,7 +297,7 @@ nav.header {
 }
 
 .header .logo img {
-    height: calc(var(--header-height) * 0.7);
+    height: calc(var(--header-height) * 0.6);
 }
 
 .header .logo p {

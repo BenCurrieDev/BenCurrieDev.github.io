@@ -35,7 +35,7 @@
 
     /* font sizing */
 
-    --fs-base: clamp(0.7rem, 1.5vw, 1.2rem);
+    --fs-base: clamp(0.6rem, 1.5vw, 1.2rem);
     
     --fs-s: calc(var(--fs-base) * 0.8);
     --fs-l: calc(var(--fs-base) * 1.2);
@@ -43,7 +43,7 @@
     --fs-h1: clamp(1.8rem, 5.6vw, 6.9rem);
     --fs-h2: clamp(1.7rem, 3vw, 5rem);
     --fs-h3: clamp(1.2rem, 2vw, 4rem);
-    --fs-h4:  clamp(0.8rem, 1.5vw, 1.6rem);
+    --fs-h4:  clamp(0.6rem, 1.5vw, 1.2rem);
     --fs-button: clamp(0.6rem, 1vw, 1.4rem);
     --fs-nav: calc(var(--header-height) * 0.35);
 
@@ -279,7 +279,7 @@ main {
     padding: var(--spacer-s);
     border-radius: 1%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -474,6 +474,7 @@ h1.banner {
 
 section#about {
     grid-area: about;
+    --icon-element-size: max(8vh, calc(var(--max-content-width) * 0.07));
 }
 
 #about h2 {
@@ -483,13 +484,17 @@ section#about {
 #about div.content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #about article.info,
 #about article.other {
     display: flex;
     flex-direction: column;
+}
+
+#about article.other {
+    text-align: center;
 }
 
 #about article.info {
@@ -521,7 +526,6 @@ section#about {
 }
 
 #about .other li {
-    --icon-element-size: max(8vh, calc(var(--max-content-width) * 0.1));
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -533,14 +537,14 @@ section#about {
 #about .other li span {
     font-size: calc(var(--icon-element-size) * 0.5);
     margin-bottom: calc(var(--icon-element-size) * 0.05);
-    color: var(--clr-tertiary);
+    color: var(--clr-primary);
 }
 
 #about .other li p {
     font-size: calc(var(--icon-element-size) * 0.15);
 }
 
-@media screen and (max-width: 39em) {
+@media screen and (max-width: 45em) {
 
     #about div.content {
         flex-direction: column;
@@ -563,7 +567,89 @@ section#about {
 /* SKILLS */
 
 section#skills {
+    
+    --icon-element-size: max(8vh, calc(var(--max-content-width) * 0.1));
+    
     grid-area: skills;
+
+}
+
+#skills div.skills-holder {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#skills div.skills-holder.learning {
+    justify-content:flex-start;
+    text-align: left;
+    margin-top: var(--spacer-l);
+}
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-element-size);
+    height: var(--icon-element-size);
+}
+
+#skills div.languages {
+    --icon-element-size: max(9vh, calc(var(--max-content-width) * 0.08));
+}
+
+#skills div.other {
+    --icon-element-size: max(9vh, calc(var(--max-content-width) * 0.08));
+}
+
+#skills div.learning.box {
+    --icon-element-size: max(7vh, calc(var(--max-content-width) * 0.05));
+    margin-left: var(--spacer-m);
+}
+
+#skills li i {
+    font-size: calc(var(--icon-element-size) * 0.5);
+    margin-bottom: calc(var(--icon-element-size) * 0.05);
+    color: var(--clr-tertiary);
+}
+
+#skills li p {
+    font-size: calc(var(--icon-element-size) * 0.15);
+}
+
+#skills h3.learning {
+    margin-top: var(--fs-h3);
+}
+
+#skills div.languages {
+    margin-right: var(--spacer-m);
+}
+
+#skills .languages i {
+    color: var(--clr-primary);
+}
+
+#skills .other i {
+    color: var(--clr-secondary);
+}
+
+#skills .learning i {
+    color: var(--clr-tertiary);
+}
+
+@media screen and (max-width: 45em) {
+    #skills div.skills-holder.learning {
+        flex-direction: column;
+        margin-top: 0;
+    }
 }
 
 /* PROJECTS */

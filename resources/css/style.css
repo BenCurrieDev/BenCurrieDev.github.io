@@ -312,7 +312,8 @@ nav.header {
 }
 
 .header .logo img {
-    height: calc(var(--header-height) * 0.6);
+    height: calc(var(--header-height) * 0.5);
+    opacity: 90%;
 }
 
 .header .logo p {
@@ -760,7 +761,7 @@ section#projects {
     --column-span: 7;
 
     width: 100%;
-    background-color: hsla(32, 96%, 50%, 0.498);
+    background-color: var(--clr-base-lt);
     border-radius: var(--border-radius);
 }
 
@@ -773,7 +774,8 @@ section#projects {
     background-size: cover;
     width: 100%;
     height: 100%;
-    opacity: 10%;
+    opacity: 20%;
+    filter: grayscale();
 
 }
 
@@ -806,11 +808,11 @@ section#projects {
         height: auto;
         background-position: center;
         background-size: cover;
-        background-color: var(--clr-base-lt);
+        
     }
 
     #projects div.img {
-        opacity: 4%;
+        opacity: 3%;
     }
 
     #projects article {

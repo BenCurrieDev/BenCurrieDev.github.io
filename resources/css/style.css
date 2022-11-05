@@ -62,7 +62,7 @@
     /* layout */
 
     --max-content-width: min(82vw, 100rem);
-    --section-padding-block: min(10vh, 40rem);
+    --section-padding-block: min(20vh, 40rem);
     
     --spacer-s: calc(var(--max-content-width) * 0.02);
     --spacer-m: calc(var(--spacer-s)*2);
@@ -689,7 +689,7 @@ section#projects {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 1fr;
-    margin-block: calc(var(--section-padding-block) * 0.7);
+    margin-block: calc(var(--section-padding-block) * 0.3);
 }
 
 .project-grid.right article {

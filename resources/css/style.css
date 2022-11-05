@@ -46,7 +46,7 @@
     --fs-h2: clamp(1.7rem, 4vw, 5rem);
     --fs-h3: clamp(1.2rem, 2vw, 2.5rem);
     --fs-h4:  clamp(0.7rem, 1.5vw, 1.2rem);
-    --fs-button: clamp(0.6rem, 0.4vw, 1.4rem);
+    --fs-button: clamp(0.6rem, 1.2vw, 1.4rem);
     --fs-nav: calc(var(--header-height) * 0.35);
 
     /* font weight */

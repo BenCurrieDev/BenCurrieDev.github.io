@@ -41,10 +41,10 @@
     --fs-l: calc(var(--fs-base) * 1.2);
 
     --fs-h1: clamp(1.8rem, 5.6vw, 6.9rem);
-    --fs-h2: clamp(1.7rem, 3vw, 5rem);
-    --fs-h3: clamp(1.2rem, 2vw, 4rem);
-    --fs-h4:  clamp(0.6rem, 1.5vw, 1.2rem);
-    --fs-button: clamp(0.6rem, 1vw, 1.4rem);
+    --fs-h2: clamp(1.7rem, 4vw, 5rem);
+    --fs-h3: clamp(1.2rem, 2vw, 2.5rem);
+    --fs-h4:  clamp(0.7rem, 1.5vw, 1.2rem);
+    --fs-button: clamp(0.6rem, 0.4vw, 1.4rem);
     --fs-nav: calc(var(--header-height) * 0.35);
 
     /* font weight */
@@ -473,8 +473,10 @@ h1.banner {
 /* ABOUT */
 
 section#about {
+    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.08));
+
     grid-area: about;
-    --icon-element-size: max(8vh, calc(var(--max-content-width) * 0.07));
+
 }
 
 #about h2 {
@@ -484,7 +486,7 @@ section#about {
 #about div.content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #about article.info,
@@ -530,21 +532,21 @@ section#about {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: var(--icon-element-size);
-    height: var(--icon-element-size);
+    width: var(--icon-element-size-base);
+    height: var(--icon-element-size-base);
 }
 
 #about .other li span {
-    font-size: calc(var(--icon-element-size) * 0.5);
-    margin-bottom: calc(var(--icon-element-size) * 0.05);
+    font-size: max(1.5rem, calc(var(--icon-element-size-base) * 0.4));
+    margin-bottom: calc(var(--icon-element-size-base) * 0.05);
     color: var(--clr-primary);
 }
 
 #about .other li p {
-    font-size: calc(var(--icon-element-size) * 0.15);
+    font-size: max(0.6rem, calc(var(--icon-element-size-base) * 0.15));
 }
 
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 59em) {
 
     #about div.content {
         flex-direction: column;
@@ -568,7 +570,7 @@ section#about {
 
 section#skills {
     
-    --icon-element-size: max(8vh, calc(var(--max-content-width) * 0.1));
+    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.13));
     
     grid-area: skills;
 
@@ -576,13 +578,13 @@ section#skills {
 
 #skills div.skills-holder {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
 }
 
 #skills div.skills-holder.learning {
-    justify-content:flex-start;
+    justify-content:space-between;
     text-align: left;
     margin-top: var(--spacer-l);
 }
@@ -591,6 +593,7 @@ section#skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-grow: 0;
 }
 
 #skills li {
@@ -602,27 +605,32 @@ section#skills {
     height: var(--icon-element-size);
 }
 
+#skills div.learning {
+    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.1));
+}
+
 #skills div.languages {
-    --icon-element-size: max(9vh, calc(var(--max-content-width) * 0.08));
+    --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
 }
 
 #skills div.other {
-    --icon-element-size: max(9vh, calc(var(--max-content-width) * 0.08));
+    --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
 }
 
 #skills div.learning.box {
-    --icon-element-size: max(7vh, calc(var(--max-content-width) * 0.05));
-    margin-left: var(--spacer-m);
+    --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
+
+    margin-left: var(--icon-element-size);
 }
 
 #skills li i {
-    font-size: calc(var(--icon-element-size) * 0.5);
+    font-size: max(calc(var(--icon-element-size) * 0.4), 1.5rem);
     margin-bottom: calc(var(--icon-element-size) * 0.05);
     color: var(--clr-tertiary);
 }
 
 #skills li p {
-    font-size: calc(var(--icon-element-size) * 0.15);
+    font-size: max(calc(var(--icon-element-size) * 0.15), 0.6rem);
 }
 
 #skills h3.learning {
@@ -645,10 +653,13 @@ section#skills {
     color: var(--clr-tertiary);
 }
 
-@media screen and (max-width: 45em) {
+@media screen and (max-width: 39em) {
     #skills div.skills-holder.learning {
         flex-direction: column;
-        margin-top: 0;
+    }
+
+    #skills div.learning.box {
+        margin-left: 0;
     }
 }
 

@@ -890,11 +890,13 @@ section#contact {
 #contact div.content span {
     font-size: calc(var(--circle-size) * 0.5);
     position: relative;
-    top: calc(var(--circle-size) * 0.025);
+    top: calc(var(--circle-size) * 0.04);
 }
 
 #contact div.content i {
     font-size: calc(var(--circle-size) * 0.4);
+    position: relative;
+    top: calc(var(--circle-size) * 0.03);
 }
 
 

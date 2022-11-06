@@ -63,6 +63,8 @@
 
     --max-content-width: min(82vw, 100rem);
     --section-padding-block: min(20vh, 40rem);
+    --max-central-width: min(var(--max-content-width), 70rem);
+    
     
     --spacer-s: calc(var(--max-content-width) * 0.02);
     --spacer-m: calc(var(--spacer-s)*2);
@@ -108,7 +110,7 @@ h2 {
 h3 {
     font-size: var(--fs-h3);
     font-weight: var(--fw-h3);
-    margin-bottom: var(--fs-h3);
+    margin-bottom:calc(var(--fs-h3)*1.5);
 }
 
 h4 {
@@ -165,7 +167,7 @@ main {
 }
 
 .fc-h {
-    color: var(--clr-base-lt);
+    color: var(--clr-ntrl-lt);
 }
 
 .fc-primary {
@@ -479,6 +481,8 @@ section#about {
     --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.08));
 
     grid-area: about;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -487,6 +491,8 @@ section#about {
 }
 
 #about div.content {
+    width: var(--max-content-width);
+    align-self: center;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -527,7 +533,7 @@ section#about {
 #about .other ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #about .other li {
@@ -573,13 +579,17 @@ section#about {
 
 section#skills {
     
-    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.13));
+    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.125));
     
     grid-area: skills;
+    display: flex;
+    flex-direction: column;
 
 }
 
 #skills div.skills-holder {
+    width: var(--max-content-width);
+    align-self: center;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -587,15 +597,13 @@ section#skills {
 }
 
 #skills div.skills-holder.learning {
-    justify-content:space-between;
-    text-align: left;
     margin-top: var(--spacer-l);
 }
 
 #skills ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     flex-grow: 0;
 }
 
@@ -610,6 +618,7 @@ section#skills {
 
 #skills div.learning {
     --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.1));
+
 }
 
 #skills div.languages {
@@ -656,7 +665,7 @@ section#skills {
     color: var(--clr-tertiary);
 }
 
-@media screen and (max-width: 39em) {
+@media screen and (max-width: 46em) {
     #skills div.skills-holder.learning {
         flex-direction: column;
     }
@@ -682,10 +691,7 @@ section#projects {
 }
 
 .project-grid {
-
-    --project-width: min(var(--max-content-width), 70rem);
-
-    width: var(--project-width);
+    width: var(--max-central-width);
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 1fr;
@@ -782,7 +788,7 @@ section#projects {
 /* height set as % of width (image resolution) */
 
 .project1 div.img-container {
-    height: calc(var(--project-width) * var(--column-span) / 10 * 0.563); /* width: 0.563h */
+    height: calc(var(--max-central-width) * var(--column-span) / 10 * 0.563); /* width: 0.563h */
 }
 
 .project1 div.img {
@@ -790,7 +796,7 @@ section#projects {
 }
 
 .project2 div.img-container {
-    height: calc(var(--project-width)* var(--column-span) / 10 * 0.563); /* width: 0.563h */
+    height: calc(var(--max-central-width)* var(--column-span) / 10 * 0.563); /* width: 0.563h */
 }
 
 .project2 div.img {
@@ -836,11 +842,61 @@ section#projects {
         background-color: transparent;
     }
 }
+
+
+
 /* CONTACT */
 
 section#contact {
     grid-area: contact;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+#contact div.content {
+    display: flex;
+    width: min(var(--max-central-width), 50em);
+    align-self: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact div.content ul {
+    display: flex;
+    justify-content: center;
+
+ 
+}
+
+#contact div.content li {
+
+    --circle-size: max(calc(var(--max-central-width) * 0.08), 4rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: calc(var(--circle-size) * 0.2);
+    margin-top: calc(var(--circle-size) * 0.5);
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border-radius: 50%;
+    background-color: #e63371;
+
+}
+
+
+#contact div.content span {
+    font-size: calc(var(--circle-size) * 0.5);
+    position: relative;
+    top: calc(var(--circle-size) * 0.025);
+}
+
+#contact div.content i {
+    font-size: calc(var(--circle-size) * 0.4);
+}
+
 
 
 

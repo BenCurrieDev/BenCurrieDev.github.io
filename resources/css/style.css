@@ -263,8 +263,8 @@ main {
 .button {
     font-family: var(--ff-h);
     font-weight: var(--fw-thin);
-    color: var(--clr-primary);
-    border: var(--border-weight) solid var(--clr-primary);
+    color: var(--clr-tertiary);
+    border: var(--border-weight) solid var(--clr-tertiary);
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: var(--shadow);
@@ -513,6 +513,7 @@ nav.banner{
 #banner .button {
     width: 10em;
     margin-right: calc(var(--button-h)/2);
+    transition: all 0.8s;
 }
 
 nav.banner,
@@ -535,6 +536,18 @@ h1.banner {
     left: calc(50% + var(--max-content-width)
      * 0.45 - min(70vw, var(--banner-img-size)));
     z-index: 2;
+}
+
+/* banner pseudo classes */
+
+#banner .button:hover {
+    background-color: var(--clr-tertiary);
+    color: var(--clr-ntrl-lt);
+}
+
+#banner .button:active {
+    background-color: var(--clr-base);
+    transition: all 0.1s;
 }
 
 
@@ -617,6 +630,7 @@ section#about {
 #about .other li p {
     font-size: max(0.6rem, calc(var(--icon-element-size-base) * 0.15));
 }
+
 
 @media screen and (max-width: 59em) {
 

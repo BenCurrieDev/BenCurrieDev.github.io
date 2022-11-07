@@ -287,6 +287,10 @@ main {
     align-items: center;
 }
 
+.noselect {
+    user-select: none;
+}
+
 /* HEADER */
 
 #mobile-menu {
@@ -302,6 +306,7 @@ nav.header {
 }
 
 .header div,
+.header div a,
 .header ul,
 .header .icons a,
 .header li {
@@ -346,10 +351,53 @@ header .icons i {
     font-size: var(--icon-size);
 }
 
+header li a,
+header li i {
+    color: var(--clr-ntrl-lt);
+}
+
 .header .icons li.github {
     margin-left: calc(var(--header-height)/6);
 }
 
+/* header pseudo classes */
+
+header * {
+    user-select: none;
+}
+
+header p,
+header a,
+header i {
+    transition: color 0.7s;
+}
+
+header a:hover > p.desktop {
+    color: var(--clr-secondary);
+}
+
+header a:hover {
+    color: var(--clr-primary);
+}
+
+header a:hover > i {
+    color: var(--clr-tertiary);
+}
+
+header a:active > p.desktop {
+    color: var(--clr-primary);
+    transition: color 0.1s;
+}
+
+header .header .links a:active {
+    color: var(--clr-tertiary);
+    transition: color 0.1s;
+}
+
+header a:active > i {
+    color: var(--clr-secondary);
+    transition: color 0.1s;
+}
 
 @media screen and (max-width: 39em) {
     
@@ -360,9 +408,11 @@ header .icons i {
 
     #mobile-menu {
         display:block;
-        color: #a7a9be;
+        color: var(--clr-ntrl-lt);
         margin-right: min(calc(var(--header-height)/2), 5vw);
         font-size: calc(var(--header-height) * 0.7);
+        transition: color 0.7s;
+
     }
     
     nav.header {
@@ -390,6 +440,19 @@ header .icons i {
     .header li.linkedin {
         margin-right: min(calc(var(--header-height)/2), 5vw);
     }
+
+    /* burger pseudo classes */
+    #mobile-menu:hover {
+        color: var(--clr-tertiary);
+        cursor: pointer;
+    }
+
+    #mobile-menu:active {
+        color: var(--clr-primary);
+        transition: color 0.1s;
+        cursor: pointer;
+    }
+
 }
 
 

@@ -633,7 +633,7 @@ section#about {
 }
 
 
-@media screen and (max-width: 59em) {
+@media screen and (max-width: 52em) {
 
     #about div.content {
         flex-direction: column;
@@ -743,7 +743,7 @@ section#skills {
     color: var(--clr-tertiary);
 }
 
-@media screen and (max-width: 46em) {
+@media screen and (max-width: 58em) {
     #skills div.skills-holder.learning {
         flex-direction: column;
     }

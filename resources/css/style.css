@@ -698,15 +698,20 @@ section#projects {
     margin-block: calc(var(--section-padding-block) * 0.3);
 }
 
+.project-grid article {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-grid article > * {
+    z-index: 3;
+}
+
 .project-grid.right article {
   grid-column: 6/11;
-  grid-row: 1;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-end;
-
 }
 
 #projects .project-grid.right h3 {
@@ -715,30 +720,22 @@ section#projects {
 
 .project-grid.left article {
   grid-column: 1/6;
-  grid-row: 1;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
 }
 
 .project-grid div.img-container {
     grid-row: 1;
-    z-index: 2;
     border-radius: var(--border-radius);
 }
 
 .project-grid.right div.img-container {
     grid-column: 1/8;
     grid-row: 1;
-    z-index: 2;
 }
 
 .project-grid.left div.img-container {
     grid-column: 4/11;
     grid-row: 1;
-    z-index: 2;
 }
 
 .project-grid p.box {
@@ -771,6 +768,7 @@ section#projects {
     border-radius: var(--border-radius);
 }
 
+
 .project-grid i {
     font-size: var(--fs-h3);
     margin-block: var(--fs-h3);
@@ -782,8 +780,8 @@ section#projects {
     height: 100%;
     opacity: 20%;
     filter: grayscale();
-
 }
+
 
 /* height set as % of width (image resolution) */
 
@@ -900,6 +898,7 @@ section#contact {
 }
 
 
+/* PSEUDO CLASSES */
 
 
 

@@ -34,7 +34,9 @@ a {
 
 /* Set core root defaults */
 
-html{scroll-behavior:smooth};
+html{
+  scroll-behavior:smooth;
+}
 
 html:focus-within {
   scroll-behavior: smooth;
@@ -66,6 +68,10 @@ select {
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
    scroll-behavior: auto;
+  }
+  
+  html {
+    scroll-behavior:auto;
   }
   
   *,

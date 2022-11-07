@@ -7,6 +7,7 @@
     --clr-base: hsl(246, 28%, 7%);
     --clr-base-lt: hsl(246, 28%, 11%);
     --clr-base-dk: hsl(246, 28%, 5%);
+    --clr-base-xlt: hsl(246, 40%, 60%);
 
     --clr-primary: #ff8800;
     --clr-primary-lt: hsl(32, 100%, 60%);
@@ -513,7 +514,7 @@ nav.banner{
 #banner .button {
     width: 10em;
     margin-right: calc(var(--button-h)/2);
-    transition: all 0.8s;
+    transition: color 0.8s, background-color 0.8s;
 }
 
 nav.banner,
@@ -547,7 +548,7 @@ h1.banner {
 
 #banner .button:active {
     background-color: var(--clr-base);
-    transition: all 0.1s;
+    transition: color 0.1s, background-color 0.1s;
 }
 
 
@@ -787,8 +788,8 @@ section#projects {
 }
 
 .project-grid.right article {
-  grid-column: 6/11;
-  align-items: flex-end;
+    grid-column: 6/11;
+    align-items: flex-end;
 }
 
 #projects .project-grid.right h3 {
@@ -796,8 +797,8 @@ section#projects {
 }
 
 .project-grid.left article {
-  grid-column: 1/6;
-  align-items: flex-start;
+    grid-column: 1/6;
+    align-items: flex-start;
 }
 
 .project-grid div.img-container {
@@ -832,31 +833,33 @@ section#projects {
     margin-left: var(--spacer-s);
 }
 
-.project-grid li p {
+#projects .project-grid li p {
     font-size: var(--fs-s);
     color: var(--clr-tertiary);
+    opacity: 99.9%; /* weird fix to issue of image hover filter change affecting this elements opacity */
 }
 
 .project-grid div.img-container {
     --column-span: 7;
 
     width: 100%;
-    background-color: var(--clr-base-lt);
+    background-color: var(--clr-base-xlt);
     border-radius: var(--border-radius);
 }
-
 
 .project-grid i {
     font-size: var(--fs-h3);
     margin-block: var(--fs-h3);
+    transition: color 0.8s;
 }
 
 .project-grid div.img {
     background-size: cover;
     width: 100%;
     height: 100%;
-    opacity: 20%;
-    filter: grayscale();
+    opacity: 80%;
+    filter: grayscale(100%);
+    transition: filter 1s, opacity 1.5s, border 0.2s;
 }
 
 
@@ -877,6 +880,28 @@ section#projects {
 .project2 div.img {
     background-image: url("../images/testImage.png");
 }
+
+/* project pseudo classes */
+
+#projects a:hover > i {
+    color: var(--clr-secondary);
+}
+
+#projects a:active > i {
+    color: var(--clr-primary);
+    transition: color 0.1s;\BenCurrieDev\MealPlanned
+}
+
+#projects a:hover > div.img {
+    opacity: 100%;
+    filter: grayscale(0%);
+}
+
+#projects a:active > div.img {
+    filter: saturate(110%) brightness(110%);
+    transition: filter 0.2s;
+}
+
 
 @media screen and (max-width: 45rem) {
 

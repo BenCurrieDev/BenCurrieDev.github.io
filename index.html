@@ -23,18 +23,20 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
+    <script src="resources/js/script.js"></script>
+
   </head>
 
 
   <body>
     
-      <header class="bgc-base bg-shadow">
+      <header class="bgc-base bg-shadow" id="header">
 
         <nav class="header">
           
           <div class="logo">
             <a href="#banner" id="banner-link">
-              <img src="resources/images/logo-transparent.png" alt="logo">
+              <image src="resources/images/logo-transparent.png" alt="logo" id="logo">
               <p class="desktop">en Currie</p>
             </a>
           </div>
@@ -57,9 +59,26 @@
 
           </ul>
           
-          <span id="mobile-menu" class="material-symbols-outlined">menu</span>
+          <span id="mobile-menu" class="material-symbols-outlined" onclick="clicked()">menu</span>
+          
+          <span id="mobile-menu-open" class="material-symbols-outlined" onclick="unclicked()">close</span>
 
         </nav>
+
+        <div id="mobile-menu-expanded">
+          
+          <ul role="list" class="links" id="mobile-nav-list">
+
+            <li class="mobile-nav"><a href="#about" class="mobile-nav">About</a></li>
+
+            <li class="mobile-nav"><a href="#skills" class="mobile-nav">Skills</a></li>
+
+            <li class="mobile-nav"><a href="#projects" class="mobile-nav">Projects</a></li>
+
+            <li class="mobile-nav"><a href="#contact" class="mobile-nav">Contact</a></li>
+            
+          </ul>
+        </div>
 
       </header>
 

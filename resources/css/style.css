@@ -143,7 +143,7 @@ header {
     z-index: 5;
 }
 
-nav p, nav a {
+header p, header a {
     font-family: var(--ff-h);
 }
 
@@ -294,12 +294,18 @@ main {
 
 /* HEADER */
 
-#mobile-menu {
+#mobile-menu,
+#mobile-menu-open,
+#mobile-menu-expanded * {
     display: none;
 }
 
+header {
+    height: var(--header-height);
+}
+
 nav.header {
-    height: 100%;
+    height: var(--header-height);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -331,15 +337,15 @@ nav.header {
     color: var(--clr-ntrl-lt);
 }
 
-.header ul.links {
+header ul.links {
     margin-right: calc(var(--header-height)/2);
 }
 
-.header .links li {
-  margin-right: 1.5em;
+header .links li {
+    margin-right: 1.5em;
 }
 
-.header .links a {
+header .links a {
     font-size: calc(var(--fs-nav) * 0.8);
     font-weight: var(--fw-thin);
 }
@@ -400,6 +406,7 @@ header a:active > i {
     transition: color 0.1s;
 }
 
+
 @media screen and (max-width: 39em) {
     
     li.desktop,
@@ -413,6 +420,7 @@ header a:active > i {
         margin-right: min(calc(var(--header-height)/2), 5vw);
         font-size: calc(var(--header-height) * 0.7);
         transition: color 0.7s;
+        position: absolute;
 
     }
     
@@ -442,8 +450,49 @@ header a:active > i {
         margin-right: min(calc(var(--header-height)/2), 5vw);
     }
 
+    header {
+        transition: height 0.5s;
+    }
+
+  
+    #mobile-menu-expanded {
+        width: 100%;
+        height: 50%;
+    }
+
+    #mobile-menu-expanded * {
+        display: block;
+    }
+    
+    #mobile-menu-expanded ul {
+        margin-inline: min(calc(var(--header-height)/2), 5vw);
+        height: 100%;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+    } 
+ 
+    li.mobile-nav,
+    a.mobile-nav {
+        opacity: 0;
+    }
+
+    #mobile-menu-expanded .links li {
+        margin: 0;
+    }
+
+    #mobile-menu-open {
+        opacity: 0;
+        color: var(--clr-ntrl-lt);
+        margin-right: min(calc(var(--header-height)/2), 5vw);
+        font-size: calc(var(--header-height) * 0.7);
+        transition: color 0.7s;
+        position: absolute;
+    }
+
     /* burger pseudo classes */
-    #mobile-menu:hover {
+    #mobile-menu:hover,
+    #mobile-menu-open:hover {
         color: var(--clr-tertiary);
         cursor: pointer;
     }
@@ -452,6 +501,25 @@ header a:active > i {
         color: var(--clr-primary);
         transition: color 0.1s;
         cursor: pointer;
+    }
+
+    @keyframes opacityUp {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes opacityDown {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
     }
 
 }

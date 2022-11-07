@@ -818,6 +818,7 @@ section#projects {
 
 .project-grid p.box {
     text-align: justify;
+    font-size: min(var(--fs-base), 1rem);
 }
 
 .project-grid ul {
@@ -889,7 +890,7 @@ section#projects {
 
 #projects a:active > i {
     color: var(--clr-primary);
-    transition: color 0.1s;\BenCurrieDev\MealPlanned
+    transition: color 0.1s;
 }
 
 #projects a:hover > div.img {
@@ -914,6 +915,7 @@ section#projects {
         height: auto;
         background-position: center;
         background-size: cover;
+        background-color: var(--clr-base-lt);
         
     }
 
@@ -940,6 +942,11 @@ section#projects {
         box-shadow: none;
         padding: 0;
         background-color: transparent;
+    }
+
+    #projects a:hover > div.img {
+        opacity: 20%;
+        filter: grayscale();
     }
 }
 

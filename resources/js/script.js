@@ -19,14 +19,14 @@ function clicked() {
     mobileList.style.display = "flex";
     
     let navs = document.querySelectorAll(".mobile-nav");
-    navs.forEach((nav, i) => {
+    navs.forEach((nav) => {
         nav.style.animation = "0.3s ease-in 0.4s forwards opacityUp";
     });
 }
 
 function unclicked() {
     let navs = document.querySelectorAll(".mobile-nav");
-    navs.forEach((nav, i) => {
+    navs.forEach((nav) => {
         nav.style.animation = "0.3s ease-in 0s forwards opacityDown";
     });
 

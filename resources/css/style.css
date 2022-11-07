@@ -982,8 +982,9 @@ section#contact {
     height: var(--circle-size);
     width: var(--circle-size);
     border-radius: 50%;
-    background-color: #e63371;
-
+    border: calc(var(--circle-size) / 50) solid var(--clr-tertiary);
+    background-color: var(--clr-tertiary);
+    transition: background-color 0.8s;
 }
 
 
@@ -991,16 +992,28 @@ section#contact {
     font-size: calc(var(--circle-size) * 0.5);
     position: relative;
     top: calc(var(--circle-size) * 0.03);
+    transition: color 0.4s;
 }
 
 #contact div.content i {
     font-size: calc(var(--circle-size) * 0.4);
     position: relative;
     top: calc(var(--circle-size) * 0.02);
+    transition: color 0.4s;
 }
 
 
-/* PSEUDO CLASSES */
+/* contact pseudo classes */
 
+#contact div.content a:hover {
+    background-color: transparent;
+}
 
+#contact div.content a:hover * {
+    color: var(--clr-tertiary);
+}
 
+#contact div.content a:active {
+    background-color: var(--clr-tertiary);
+    transition: background-color 0.1s;
+}

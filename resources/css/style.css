@@ -47,7 +47,7 @@
     --fs-h2: clamp(1.7rem, 4vw, 5rem);
     --fs-h3: clamp(1.2rem, 2vw, 2.5rem);
     --fs-h4:  clamp(0.7rem, 1.5vw, 1.2rem);
-    --fs-button: clamp(0.8rem, 1.2vw, 1.4rem);
+    --fs-button: clamp(0.75rem, 1.2vw, 1.4rem);
     --fs-nav: calc(var(--header-height) * 0.35);
 
     /* font weight */
@@ -62,7 +62,7 @@
 
     /* layout */
 
-    --max-content-width: min(82vw, 100rem);
+    --max-content-width: min(90vw, 100rem);
     --section-padding-block: min(20vh, 40rem);
     --max-central-width: min(var(--max-content-width), 70rem);
     
@@ -530,7 +530,7 @@ header a:active > i {
 
 div.main.container {
     width: var(--max-content-width);
-    margin: 0 auto;
+    margin: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-areas: "banner"
@@ -708,16 +708,16 @@ section#about {
         justify-content: flex-start;
     }
 
-    #about h3 {
-        text-align: center;
-    }
-
     #about article.info {
         margin-right: 0;
     }
 
     #about article.other {
         margin-top: var(--fs-h3);
+    }
+
+    #about h3 {
+        text-align: center;
     }
 }
 
@@ -732,6 +732,7 @@ section#skills {
     flex-direction: column;
 
 }
+
 
 #skills div.skills-holder {
     width: var(--max-content-width);
@@ -818,6 +819,10 @@ section#skills {
 
     #skills div.learning.box {
         margin-left: 0;
+    }
+
+    #skills h3 {
+        text-align: center;
     }
 }
 
@@ -985,6 +990,10 @@ section#projects {
         background-size: cover;
         background-color: var(--clr-base-lt);
         
+    }
+
+    #projects h3 {
+        text-align: center;
     }
 
     #projects div.img {

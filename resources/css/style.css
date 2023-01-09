@@ -802,7 +802,7 @@ section#about {
 
 section#skills {
     
-    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.125));
+    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.12));
     
     grid-area: skills;
     display: flex;
@@ -810,18 +810,13 @@ section#skills {
 
 }
 
-
 #skills div.skills-holder {
     width: var(--max-content-width);
     align-self: center;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     text-align: center;
     align-items: center;
-}
-
-#skills div.skills-holder.learning {
-    margin-top: var(--spacer-l);
 }
 
 #skills ul {
@@ -840,24 +835,10 @@ section#skills {
     height: var(--icon-element-size);
 }
 
-#skills div.learning {
-    --icon-element-size-base: max(4rem, calc(var(--max-content-width) * 0.1));
-
-}
-
 #skills div.languages {
     --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
 }
 
-#skills div.other {
-    --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
-}
-
-#skills div.learning.box {
-    --icon-element-size: calc(var(--icon-element-size-base) * 0.8);
-
-    margin-left: var(--icon-element-size);
-}
 
 #skills li i {
     font-size: max(calc(var(--icon-element-size) * 0.4), 1.5rem);
@@ -869,38 +850,19 @@ section#skills {
     font-size: max(calc(var(--icon-element-size) * 0.15), 0.6rem);
 }
 
-#skills h3.learning {
-    margin-top: var(--fs-h3);
-}
-
-#skills div.languages {
-    margin-right: var(--spacer-m);
-}
-
-#skills .languages i {
-    color: var(--clr-primary);
-}
-
-#skills .other i {
-    color: var(--clr-secondary);
-}
-
-#skills .learning i {
-    color: var(--clr-tertiary);
-}
 
 @media screen and (max-width: 58em) {
-    #skills div.skills-holder.learning {
-        flex-direction: column;
-    }
-
-    #skills div.learning.box {
-        margin-left: 0;
-    }
 
     #skills h3 {
         text-align: center;
     }
+
+    #skills li {
+        width: calc(var(--icon-element-size) * 2);
+        height: calc(var(--icon-element-size) * 2);
+    }
+    
+    
 }
 
 /* PROJECTS */
@@ -1029,7 +991,7 @@ section#projects {
 }
 
 .project2 div.img {
-    background-image: url("../images/testImage.png");
+    background-image: url("../images/mealsy.png");
 }
 
 /* project pseudo classes */

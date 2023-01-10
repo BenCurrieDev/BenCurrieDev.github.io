@@ -651,11 +651,11 @@ h1.banner {
 }
 
 #banner .button {
-    animation: 2s 4s forwards opacityUp;
+    animation: 2s 2.5s forwards opacityUp;
 }
 
 #banner img {
-    animation: 2s 5s forwards bgOpacityUp;
+    animation: 2s 2.5s forwards bgOpacityUp;
 }
 
 
